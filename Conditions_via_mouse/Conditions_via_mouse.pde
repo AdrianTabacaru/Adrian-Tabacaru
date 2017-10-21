@@ -1,11 +1,11 @@
 void setup (){
     size (100, 100);}             // set the screen size to 100x100 pixels
-boolean Click;                    // True oe False 
+boolean Click;                    // True oe False "Click"
 void draw () {
-  background (200, 20, 0);        //Draw a red background
+  background (200, 20, 0);        //Draw RED background
  
   if (Click == false) {           //
- strokeWeight(10); // stroke is 10
+ strokeWeight(10);                // stroke is 10
  stroke(#E4F500);                 // make it yellow
    line (0, 100, 100, 0); }       // draw forward line
 
