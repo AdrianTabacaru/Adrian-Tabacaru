@@ -10,7 +10,7 @@ void draw () {
     speed = pow(mouseX-pmouseX, 2) + pow(mouseY-pmouseY, 2); //a^2 este pow(a,2)
     line (mouseX, 0, mouseX, speed/2 + 10);
     //text(speed, 10, 10); 
-  } else background (100);
+  } else background (200);
 }
 void mousePressed() {
   freeze = !freeze;
