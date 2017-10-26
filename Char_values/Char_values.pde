@@ -1,4 +1,4 @@
-
+textFont(createFont("SourceCodePro-Regular.ttf",10));
 size (200,15);
 background(0);
 

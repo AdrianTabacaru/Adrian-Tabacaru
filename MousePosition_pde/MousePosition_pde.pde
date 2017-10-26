@@ -17,9 +17,12 @@ textFont(createFont("SourceCodePro-Regular.ttf",24));
 
 //println(a);
 void draw () {
+  
   int a = mouseX;
-  int b = mouseY;
+//int b = (mouseY);
+  int b = (height-mouseY);
 
+println (a, b+pow(2,2));
 background(0);
 
   text("The value of variable A is " + a, 20, 60);
