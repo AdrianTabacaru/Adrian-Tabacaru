@@ -27,7 +27,7 @@ void draw() {
   velocity.add(gravity);
   
   // Bounce off edges
-  if ((location.x > width) || (location.x < 0)) {
+  if ((location.x > mX) || (location.x < 0)) {
     velocity.x = velocity.x * -1;
   }
   if (location.y > height) {
