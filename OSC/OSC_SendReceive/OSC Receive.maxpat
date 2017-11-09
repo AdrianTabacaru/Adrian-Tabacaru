@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 39.0, 472.0, 708.0, 383.0 ],
+		"rect" : [ 52.0, 483.0, 708.0, 383.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 549.5, 80.5, 50.0, 22.0 ],
-					"presentation_rect" : [ 549.0, 80.5, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -86,7 +85,6 @@
 					"outlettype" : [ "float" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 506.0, 62.5, 40.0, 40.0 ],
-					"presentation_rect" : [ 509.0, 61.5, 0.0, 0.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_longname" : "dial[1]",
@@ -113,7 +111,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 349.25, 250.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 349.25, 247.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -128,7 +125,6 @@
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 3.999985, 252.0, 339.749969, 18.0 ],
-					"presentation_rect" : [ 3.999985, 252.0, 0.0, 0.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
 					"setstyle" : 1,
 					"style" : ""
@@ -190,7 +186,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-3",
-					"int" : 1,
 					"maxclass" : "gswitch",
 					"numinlets" : 3,
 					"numoutlets" : 1,
@@ -299,9 +294,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 439.5, 219.0, 173.0, 22.0 ],
+					"patching_rect" : [ 439.5, 219.0, 144.0, 22.0 ],
 					"style" : "",
-					"text" : "udpsend 192.168.0.102 16000"
+					"text" : "udpsend localhost 16000"
 				}
 
 			}

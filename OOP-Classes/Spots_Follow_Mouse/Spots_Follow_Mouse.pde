@@ -47,7 +47,8 @@ spots[i].display1(); // Display each object
 }else{ 
 spots[i].display(); // Display each object
 //Send Screen to Resolume
-server.sendScreen();
+
 }
+server.sendScreen();
 }
 }
