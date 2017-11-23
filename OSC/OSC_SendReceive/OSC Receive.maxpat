@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 52.0, 483.0, 708.0, 383.0 ],
+		"rect" : [ 187.0, 446.0, 708.0, 383.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 525.0, 276.0, 99.0, 22.0 ],
+					"style" : "",
+					"text" : "udpreceive 3334"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-32",
@@ -506,10 +519,19 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
-			"obj-14" : [ "dial", "dial", 0 ],
-			"obj-28" : [ "dial[1]", "dial", 0 ]
+			"obj-28" : [ "dial[1]", "dial", 0 ],
+			"obj-14" : [ "dial", "dial", 0 ]
 		}
 ,
 		"dependency_cache" : [  ],
