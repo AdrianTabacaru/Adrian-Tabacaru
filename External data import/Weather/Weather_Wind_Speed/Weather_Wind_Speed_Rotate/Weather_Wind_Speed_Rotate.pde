@@ -1,8 +1,10 @@
 XML xml;
 float diameter; 
 float angle = 0;
+int counter;
 
 void setup() {
+  xml = loadXML("LondonWind.xml");
   size(640, 360);
   frameRate(25);
   noStroke();
@@ -12,7 +14,15 @@ void setup() {
 void draw() {
   diameter = 3;
   background(60);
-  xml = loadXML("LondonWind.xml");
+  
+  counter ++;
+  if (counter == 300) 
+  {
+    xml = loadXML("LondonWind.xml");
+    counter = 0;
+  }
+
+
   XML[] children1 = xml.getChildren("speed1");
   for (int i = 0; i < children1.length; i++) {
     float speed1 = children1[i].getFloat("value");
