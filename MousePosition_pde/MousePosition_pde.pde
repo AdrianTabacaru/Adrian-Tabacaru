@@ -8,7 +8,7 @@
  */
 
 void setup() {
-size(640, 360);
+size(1200, 720);
 background(0);
 noStroke();
 
@@ -25,6 +25,6 @@ void draw () {
 println (a, b+pow(2,2));
 background(0);
 
-  text("The value of variable A is " + a, 20, 60);
-  text("The value of variable b is " + b, 20, 30);
+  text("The value of variable x is " + a, 20, 60);
+  text("The value of variable y is " + b, 20, 30);
 }
