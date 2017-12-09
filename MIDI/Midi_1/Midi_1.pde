@@ -1,9 +1,12 @@
 // SimpleMidi.pde
 
+
+
 import themidibus.*; //Import the library
 import javax.sound.midi.MidiMessage; 
 
 MidiBus myBus; 
+
 
 
 int currentColor = 0;
@@ -11,7 +14,7 @@ float xpos = 0;
 float ypos = 0;
 float fill = 0;
 float scale = 0;
-int midiDevice  = 3;
+int midiDevice  = 9;
 
 
 void setup() {
