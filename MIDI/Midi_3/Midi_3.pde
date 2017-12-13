@@ -18,14 +18,15 @@ float fill = 0;
 float scale = 0;
 //float pScale = 0;
 //int midiDevice  = 3; // From USB MIDI IN
-int midiDevice  = 9; // From Max 1
+int midiDevice  = 9; // use 9 From Max 1 IN
 
 ArrayList<PVector> 
   a=new ArrayList();
 
 void setup() {
-  size(1280, 720, P2D);
+  size(1280, 720, P3D);
   frameRate(50);
+
   // Create syhpon server to send frames out.
   server = new SyphonServer(this, "Processing Syphon");
   /* start oscP5, listening for incoming messages at port 12000 */
@@ -47,21 +48,25 @@ void draw() {
   for (int i=0; i<a.size(); i++) {
 
 
-    //From Top to Bottom
-    a.get(i).y++;
+    //From Left to Right
+    a.get(i).x--;
     a.get(i).x+=width;
     a.get(i).x%=width;
     ellipse(a.get(i).x, a.get(i).y, 10, 10);
+
   }
 }
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
-  int note = (int)(message.getMessage()[1] & 0xFF) ;
+  int note = ((int)(message.getMessage()[1] & 0xFF)*-1)+118 ;
   int vel = (int)(message.getMessage()[2] & 0xFF);
 
 
   //notes x Position mapped to width
-  float  x1 = map(note, 0, width, -250, 16000);
+  float x1 = map(note, 0, width, 50, 0);
+  float y1 = map(note, 0, height, 50, 3000);
+  
+
   /*
 if (vel > 0) {
    pScale = vel/3;
@@ -69,10 +74,10 @@ if (vel > 0) {
    */
 
   if (note > 0) {
-    xpos = note+x1;
+    xpos = (note+x1+1000);
   }
   if (note > 0) {
-    ypos = 20;
+    ypos = note+y1;
   }
 
 
@@ -85,8 +90,9 @@ if (vel > 0) {
   if (vel > 0) {
     scale = vel/2;
   }
-  if (note>0)a.add(new PVector(xpos, ypos, 20));
+  if (note>0)a.add(new PVector(xpos, ypos, 0));
 
   //println("Bus " + bus_name + ": Note "+ note + ", vel " + vel);
-  println (note);
+  //println (note);
+  println (ypos);
 }

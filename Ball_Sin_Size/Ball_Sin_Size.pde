@@ -6,7 +6,6 @@ void setup() {
   frameRate(25);
   diameter = 10;
   noStroke();
-  noStroke();
   fill(255, 204, 0);
 }
 
