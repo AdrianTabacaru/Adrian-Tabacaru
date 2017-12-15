@@ -18,10 +18,9 @@ float fill = 0;
 float scale = 0;
 //float pScale = 0;
 //int midiDevice  = 3; // From USB MIDI IN
-int midiDevice  = 9; // use 9 From Max 1 IN
+int midiDevice  = 7; // use 9 From Max 1 IN
 
-ArrayList<PVector> 
-  a=new ArrayList();
+ArrayList<PVector>  a=new ArrayList();
 
 void setup() {
   size(1280, 720, P3D);
@@ -50,9 +49,11 @@ void draw() {
 
     //From Left to Right
     a.get(i).x--;
-    a.get(i).x+=width;
-    a.get(i).x%=width;
+   // a.get(i).x+=width;
+    //a.get(i).x%=width;
     ellipse(a.get(i).x, a.get(i).y, 10, 10);
+    
+    println(a.get(i).x);
 
   }
 }
@@ -94,5 +95,5 @@ if (vel > 0) {
 
   //println("Bus " + bus_name + ": Note "+ note + ", vel " + vel);
   //println (note);
-  println (ypos);
+  //println (a. );
 }
