@@ -19,6 +19,7 @@ float scale = 0;
 //float pScale = 0;
 //int midiDevice  = 3; // From USB MIDI IN
 int midiDevice  = 7; // use 9 From Max 1 IN
+int velocity;
 
 ArrayList<PVector>  a=new ArrayList();
 
@@ -51,7 +52,7 @@ void draw() {
     a.get(i).x--;
    // a.get(i).x+=width;
     //a.get(i).x%=width;
-    ellipse(a.get(i).x, a.get(i).y, 10, 10);
+    ellipse(a.get(i).x, a.get(i).y, velocity, velocity);
     
     println(a.get(i).x);
 
@@ -61,6 +62,7 @@ void draw() {
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
   int note = ((int)(message.getMessage()[1] & 0xFF)*-1)+118 ;
   int vel = (int)(message.getMessage()[2] & 0xFF);
+  velocity = vel;
 
 
   //notes x Position mapped to width
