@@ -1,0 +1,82 @@
+PImage img;
+Table coordonate;
+int x;
+int y;
+int i;
+
+
+//With Syphone Screen to Resolume
+import codeanticode.syphon.*;
+SyphonServer server;
+
+// SimpleMidi.pde
+import themidibus.*; //Import the library
+import javax.sound.midi.MidiMessage; 
+
+MidiBus myBus; 
+int midiDevice  = 10;
+
+
+void setup () {
+  i=0;
+  frameRate(25);
+  // Create syhpon server to send frames out.
+  server = new SyphonServer(this, "Processing Syphon");
+
+  img = loadImage("Moon.png");
+  MidiBus.list(); 
+  myBus = new MidiBus(this, midiDevice, 1);
+  size (1280, 720, P2D);
+  background (#0F0F0F);
+  smooth(8);
+  coordonate = loadTable("coordonate.csv", "header");
+  println(coordonate.getRowCount()-1 + " total rows in table");
+}
+
+void draw () {
+
+  //tint(255, 2);
+  image(img, 0, 0);
+  ellipse(x, y, 4, 4);
+  server.sendScreen();
+}
+
+void incremental() {
+
+  {
+    TableRow row = coordonate.getRow(i);
+    x = row.getInt("x");
+    y = row.getInt("y");
+    println(x, y);
+    i++;
+    if (i==coordonate.getRowCount()) 
+    {
+      i=0;
+    }
+  }
+}
+void mousePressed() {
+  TableRow row = coordonate.getRow(i);
+
+  incremental();
+}
+
+void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
+  int note = (int)(message.getMessage()[1] & 0xFF);
+  int vel = (int)(message.getMessage()[2] & 0xFF);
+  if (note > 0) {
+    incremental();
+  }
+  /*
+    TableRow row = coordonate.getRow(i);
+   i++;
+   if (i==coordonate.getRowCount()) 
+   {
+   i=0;
+   }
+   x = row.getInt("x");
+   y = row.getInt("y");
+   println (note);
+   println(x, y);
+   */
+}

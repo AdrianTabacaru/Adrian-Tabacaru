@@ -14,7 +14,7 @@ float xpos = 0;
 float ypos = 0;
 float fill = 0;
 float scale = 0;
-int midiDevice  = 7;
+int midiDevice  = 9;
 
 
 void setup() {

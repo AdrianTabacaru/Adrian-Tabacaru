@@ -18,7 +18,7 @@ float fill = 0;
 float scale = 0;
 //float pScale = 0;
 //int midiDevice  = 3; // From USB MIDI IN
-int midiDevice  = 7; // use 9 From Max 1 IN
+int midiDevice  = 9; // use 9 From Max 1 IN
 int velocity;
 
 ArrayList<PVector>  a=new ArrayList();
