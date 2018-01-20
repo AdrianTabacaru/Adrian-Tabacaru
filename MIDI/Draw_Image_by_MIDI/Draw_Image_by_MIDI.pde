@@ -15,7 +15,7 @@ import javax.sound.midi.MidiMessage;
 
 MidiBus myBus; 
 
-  int midiDevice  = 10;
+int midiDevice  = 3;
 
 
 void setup () {
@@ -24,29 +24,26 @@ void setup () {
   // Create syhpon server to send frames out.
   server = new SyphonServer(this, "Processing Syphon");
 
-  img = loadImage("Moon.png");
+
   MidiBus.list(); 
   myBus = new MidiBus(this, midiDevice, 1);
   size (1280, 720, P2D);
   background (#0F0F0F);
   //smooth(8);
-  coordonate = loadTable("Coordinates_Rand.csv", "header");
-  // println(coordonate.getRowCount() + " total rows in table");
+  coordonate = loadTable("ImageOrder.csv", "header");
+  println(coordonate.getRowCount() + " total rows in table");
 }
 
 void draw () {
   //tint(255, 2);
-  image(img, 0, 0);
-  ellipse(x, y, 4, 4);
-  server.sendScreen();
+  // ellipse(x, y, 4, 4);
 }
 
 void incremental() {
   {
     TableRow row = coordonate.getRow(i);
     x = row.getInt("x");
-    y = row.getInt("y");
-    // println(x, y);
+    println(x);
     delay(30);
     i++;
     if (i==coordonate.getRowCount()) 
@@ -56,10 +53,11 @@ void incremental() {
   }
 }
 
-//void mousePressed() {
-//TableRow row = coordonate.getRow(i);
-//incremental();
-//}
+void mousePressed() {
+  img = loadImage("0000.png");
+  image(img, 0, 0);
+  server.sendScreen();
+}
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
   int note = (int)(message.getMessage()[1] & 0xFF);
@@ -67,5 +65,4 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
   if (vel > 0) {
     incremental();
   }
-
 }

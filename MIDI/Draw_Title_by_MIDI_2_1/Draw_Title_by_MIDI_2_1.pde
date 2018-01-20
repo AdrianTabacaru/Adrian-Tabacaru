@@ -15,7 +15,7 @@ import javax.sound.midi.MidiMessage;
 
 MidiBus myBus; 
 
-  int midiDevice  = 10;
+  int midiDevice  = 3;
 
 
 void setup () {

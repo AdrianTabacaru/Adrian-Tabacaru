@@ -48,7 +48,7 @@ void draw() {
   for (int i = points.size()-1; i >= 0; i--) {
     PVector p = points.get(i);
     fill(255);
-    ellipse(p.x, p.y, 3, 3);
+    ellipse(p.x+20, p.y+20, 30, 30);
   }
 }
 
