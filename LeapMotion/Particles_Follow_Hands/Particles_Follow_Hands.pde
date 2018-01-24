@@ -15,7 +15,7 @@ void setup() {
   // Create syhpon server to send frames out.
   server = new SyphonServer(this, "Processing Syphon");
   size(1280, 720, P3D);
-  frameRate(50);
+  frameRate(25);
   background(0);
 
   cir[0]=new circle();
@@ -25,8 +25,6 @@ void setup() {
   leap = new LeapMotion(this);
   points = new ArrayList<PVector>(); 
 
-
-  smooth(8);
   noStroke();
 }
 
@@ -59,7 +57,7 @@ void draw() {
       fp   = finger.getPosition(); 
 
       if (fp.z <= 30) {
-        fill(25);
+        fill(255);
         ellipse(fp.x, fp.y, constrain(fp.z, 10, 20), constrain(fp.z, 10, 20));
       } else if (fp.z > 30) {
         points.add(new PVector(fp.x, fp.y));
@@ -74,9 +72,10 @@ void draw() {
 }
 class circle {
   float _x=random(-1, 1), _y=random(-1, 1);
-  float R=random(2, 4);
+  float R=random(2, 6);
   float x=0, y=0;
-  int c=220, _c=4;
+  int c=500, _c=10;
+ 
 
   void make() {
     noStroke();
@@ -91,7 +90,7 @@ class circle {
       return;
     }
     noStroke();
-    fill(255, 255, 255, c);
+    fill(#F2CA00, c);
     ellipse(x, y, R, R);
     x+=_x;
     y+=_y;
