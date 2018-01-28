@@ -15,10 +15,11 @@ import javax.sound.midi.MidiMessage;
 
 MidiBus myBus; 
 
-  int midiDevice  = 13; // from Max 1
+int midiDevice  = 3; // 13 from Max 1
 
 
 void setup () {
+
   i=0;
   frameRate(50);
   // Create syhpon server to send frames out.
@@ -29,14 +30,19 @@ void setup () {
   myBus = new MidiBus(this, midiDevice, 1);
   size (1280, 720, P2D);
   background (#0F0F0F);
-  //smooth(8);
+  smooth(4);
   coordonate = loadTable("Coordinates_Rand.csv", "header");
   // println(coordonate.getRowCount() + " total rows in table");
 }
 
 void draw () {
   //tint(255, 2);
-  image(img, 0, 0);
+  ellipse(326, 296, 160, 160); //Black
+  fill(0);
+  ellipse(306, 296, 160, 160); //White
+  fill(255);
+  
+ // image(img, 0, 0);
   ellipse(x, y, 4, 4);
   server.sendScreen();
 }

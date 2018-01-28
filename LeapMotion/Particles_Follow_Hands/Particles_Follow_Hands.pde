@@ -4,6 +4,8 @@ SyphonServer server;
 import de.voidplus.leapmotion.*; 
 LeapMotion leap; 
 
+float handX, handY, handZ;
+
 circle[] cir = new circle[1];
 int n=0;
 
@@ -15,7 +17,7 @@ void setup() {
   // Create syhpon server to send frames out.
   server = new SyphonServer(this, "Processing Syphon");
   size(1280, 720, P3D);
-  frameRate(25);
+  frameRate(50);
   background(0);
 
   cir[0]=new circle();
@@ -37,63 +39,64 @@ void draw() {
   }
 
 
+  for (Hand hand : leap.getHands()) {
+
+    handX=hand.getPosition().x;
+    handY=hand.getPosition().y;
+    handZ=hand.getPosition().z;
+  }
+
   background(0);
 
   int num=(int)random(5, 10);
-  cir=(circle[])expand(cir, n+num);
-  for (int i=0; i<n; i++) {
-    cir[i].move();
+  int total=constrain(n+num, 0, 500);
+
+
+
+  for (int i=n-1; i>=0; i--) {
+    if (cir[i].move()==false) {
+      for (int j=i+1; j<n; j++) {
+        cir [j-1]=cir[j];
+      }
+      cir=(circle[])shorten(cir);
+      n--;
+      //   println(n);
+    }
   }
-  for (int i=n; i<n+num; i++) {
+
+  cir=(circle[])expand(cir, total);
+  for (int i=n; i<total; i++) {
     cir[i]= new circle();
     cir[i].make();
   }
-  n+=num;
-
-  int fps = leap.getFrameRate();
-  frameRate(fps);
-  for (Hand hand : leap.getHands()) {
-    for (Finger finger : hand.getFingers()) {
-      fp   = finger.getPosition(); 
-
-      if (fp.z <= 30) {
-        fill(255);
-        ellipse(fp.x, fp.y, constrain(fp.z, 10, 20), constrain(fp.z, 10, 20));
-      } else if (fp.z > 30) {
-        points.add(new PVector(fp.x, fp.y));
-      }
-    }
-  }
-  for (int i = points.size()-1; i >= 0; i--) {
-    PVector p = points.get(i);
-    fill(255);
-    ellipse(p.x, p.y, 3, 3);
-  }
+  n=total;
 }
 class circle {
   float _x=random(-1, 1), _y=random(-1, 1);
   float R=random(2, 6);
   float x=0, y=0;
   int c=500, _c=10;
- 
+
 
   void make() {
     noStroke();
-    fill(255);
-    ellipse(mouseX, mouseY, R, R);
-    x=mouseX;
-    y=mouseY;
+    fill(#F2CA00);
+    ellipse(handX, handY, R, R);
+    x=handX;
+    y=handY;
   }
 
-  void move() {
+
+  boolean move() {
     if (c==0) {
-      return;
+      return false;
     }
     noStroke();
     fill(#F2CA00, c);
-    ellipse(x, y, R, R);
+    ellipse(x, y, handZ/10, handZ/10);
     x+=_x;
     y+=_y;
     c-=_c;
+    return true;
   }
 }

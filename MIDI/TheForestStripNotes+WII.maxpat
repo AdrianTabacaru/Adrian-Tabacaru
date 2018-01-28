@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 70.0, 85.0, 1285.0, 763.0 ],
+		"rect" : [ 88.0, 83.0, 1285.0, 763.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-114",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 554.0, 392.0, 52.0, 22.0 ],
+					"style" : "",
+					"text" : "midiinfo"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-113",
 					"maxclass" : "message",
@@ -172,7 +185,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 89.0, 212.0, 83.0, 47.0 ],
+					"patching_rect" : [ 32.0, 235.0, 85.0, 47.0 ],
 					"style" : "",
 					"text" : "From Max 1 to Processing\nDRAW TITLE"
 				}
@@ -342,9 +355,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 897.0, 714.5, 53.0, 20.0 ],
+					"patching_rect" : [ 897.0, 714.5, 112.0, 20.0 ],
 					"style" : "",
-					"text" : "noteout f"
+					"text" : "noteout \"from Max 2\""
 				}
 
 			}
@@ -609,9 +622,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 836.0, 121.0, 43.0, 22.0 ],
+					"patching_rect" : [ 836.0, 121.0, 36.0, 22.0 ],
 					"style" : "",
-					"text" : "sel 35"
+					"text" : "sel 0"
 				}
 
 			}
@@ -697,7 +710,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 897.0, 41.0, 95.0, 20.0 ],
+					"patching_rect" : [ 836.0, 25.0, 95.0, 20.0 ],
 					"style" : "",
 					"text" : "From TrigerIO"
 				}
@@ -723,9 +736,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 836.0, 41.0, 53.0, 22.0 ],
+					"patching_rect" : [ 836.0, 41.0, 157.0, 22.0 ],
 					"style" : "",
-					"text" : "notein g"
+					"text" : "notein \"TriggerIO MIDI Out\""
 				}
 
 			}
@@ -850,7 +863,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 366.0, 41.0, 131.0, 20.0 ],
+					"patching_rect" : [ 305.0, 25.0, 131.0, 20.0 ],
 					"style" : "",
 					"text" : "From OSCulator Out"
 				}
@@ -1359,9 +1372,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 271.75, 721.0, 107.0, 22.0 ],
+					"patching_rect" : [ 271.75, 721.0, 122.0, 22.0 ],
 					"style" : "",
-					"text" : "noteout e"
+					"text" : "noteout \"from Max 1\""
 				}
 
 			}
@@ -1373,9 +1386,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 305.0, 41.0, 53.0, 22.0 ],
+					"patching_rect" : [ 305.0, 41.0, 134.0, 22.0 ],
 					"style" : "",
-					"text" : "notein d"
+					"text" : "notein \"OSCulator Out\""
 				}
 
 			}
@@ -1425,7 +1438,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 152.75, 41.0, 125.0, 33.0 ],
+					"patching_rect" : [ 165.75, 32.5, 125.0, 33.0 ],
 					"style" : "",
 					"text" : "from intermal Ableton to Resolume"
 				}
@@ -1452,9 +1465,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 101.0, 52.0, 53.0, 22.0 ],
+					"patching_rect" : [ 82.0, 62.0, 224.0, 22.0 ],
 					"style" : "",
-					"text" : "notein b"
+					"text" : "notein \"IAC Driver Ableton to Resolume\""
 				}
 
 			}
@@ -1465,9 +1478,9 @@
 					"maxclass" : "newobj",
 					"numinlets" : 3,
 					"numoutlets" : 0,
-					"patching_rect" : [ 27.0, 212.0, 61.0, 22.0 ],
+					"patching_rect" : [ 27.0, 212.0, 122.0, 22.0 ],
 					"style" : "",
-					"text" : "noteout e"
+					"text" : "noteout \"from Max 1\""
 				}
 
 			}
@@ -1518,9 +1531,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 27.0, 52.0, 53.0, 22.0 ],
+					"patching_rect" : [ 24.0, 38.0, 101.0, 22.0 ],
 					"style" : "",
-					"text" : "notein a"
+					"text" : "notein \"to Max 1\""
 				}
 
 			}
@@ -1971,7 +1984,7 @@
 					"destination" : [ "obj-66", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 110.5, 84.0, 291.0, 84.0, 291.0, 75.0, 552.0, 75.0, 552.0, 9.0, 575.5, 9.0 ],
+					"midpoints" : [ 91.5, 84.0, 291.0, 84.0, 291.0, 75.0, 552.0, 75.0, 552.0, 9.0, 575.5, 9.0 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
