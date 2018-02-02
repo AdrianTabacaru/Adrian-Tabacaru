@@ -15,7 +15,7 @@ import javax.sound.midi.MidiMessage;
 
 MidiBus myBus; 
 
-int midiDevice  = 3; // 13 from Max 1
+int midiDevice  = 13; // 13 from Max 1
 
 
 void setup () {
@@ -37,10 +37,10 @@ void setup () {
 
 void draw () {
   //tint(255, 2);
-  ellipse(326, 296, 160, 160); //Black
-  fill(0);
-  ellipse(306, 296, 160, 160); //White
-  fill(255);
+  //ellipse(326, 296, 160, 160); //Black
+  //fill(0);
+  //ellipse(306, 296, 160, 160); //White
+  //fill(255);
   
  // image(img, 0, 0);
   ellipse(x, y, 4, 4);
@@ -63,7 +63,8 @@ void incremental() {
 }
 
 //void mousePressed() {
-//TableRow row = coordonate.getRow(i);
+
+  //TableRow row = coordonate.getRow(i);
 //incremental();
 //}
 

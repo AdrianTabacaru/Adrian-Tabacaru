@@ -26,11 +26,11 @@ class circle{
   float _x=random(-1,1),_y=random(-1,1);
   float R=random(2,4);
   float x=0,y=0;
-  int c=220,_c=4;
+  int c=620,_c=4;
 
   void make(){
     noStroke();
-    fill(255);
+    fill(#FFE603);
     ellipse(mouseX,mouseY,R,R);
     x=mouseX;
     y=mouseY;
@@ -41,7 +41,7 @@ class circle{
       return;
     }
     noStroke();
-    fill(255,255,255,c);
+    fill(#FFE603,c);
     ellipse(x,y,R,R);
     x+=_x;
     y+=_y;
