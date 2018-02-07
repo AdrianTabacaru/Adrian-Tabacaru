@@ -38,6 +38,19 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-115",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1036.75, 664.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-114",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
@@ -1438,7 +1451,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 165.75, 32.5, 125.0, 33.0 ],
+					"patching_rect" : [ 134.75, 73.0, 125.0, 33.0 ],
 					"style" : "",
 					"text" : "from intermal Ableton to Resolume"
 				}
@@ -1465,7 +1478,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 82.0, 62.0, 224.0, 22.0 ],
+					"patching_rect" : [ 19.0, 49.0, 224.0, 22.0 ],
 					"style" : "",
 					"text" : "notein \"IAC Driver Ableton to Resolume\""
 				}
@@ -1531,9 +1544,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "int", "int" ],
-					"patching_rect" : [ 24.0, 38.0, 101.0, 22.0 ],
+					"patching_rect" : [ 110.25, 1.0, 158.0, 22.0 ],
 					"style" : "",
-					"text" : "notein \"to Max 1\""
+					"text" : "notein \"MIDIMATE II Port 1\""
 				}
 
 			}
@@ -1639,6 +1652,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-115", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-105", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-103", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1726,6 +1748,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-113", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-109", 2 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-115", 0 ]
 				}
 
 			}
@@ -1984,7 +2015,7 @@
 					"destination" : [ "obj-66", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 91.5, 84.0, 291.0, 84.0, 291.0, 75.0, 552.0, 75.0, 552.0, 9.0, 575.5, 9.0 ],
+					"midpoints" : [ 28.5, 84.0, 291.0, 84.0, 291.0, 75.0, 552.0, 75.0, 552.0, 9.0, 575.5, 9.0 ],
 					"source" : [ "obj-3", 0 ]
 				}
 

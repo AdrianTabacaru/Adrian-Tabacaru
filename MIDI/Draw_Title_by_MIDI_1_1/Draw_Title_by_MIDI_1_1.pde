@@ -1,4 +1,4 @@
-PImage img;
+//PImage img;
 Table coordonate;
 int i;
 int x;
@@ -25,7 +25,7 @@ void setup () {
   // Create syhpon server to send frames out.
   server = new SyphonServer(this, "Processing Syphon");
 
-  img = loadImage("Moon.png");
+  // img = loadImage("Moon.png");
   MidiBus.list(); 
   myBus = new MidiBus(this, midiDevice, 1);
   size (1280, 720, P2D);
@@ -41,8 +41,8 @@ void draw () {
   //fill(0);
   //ellipse(306, 296, 160, 160); //White
   //fill(255);
-  
- // image(img, 0, 0);
+
+  // image(img, 0, 0);
   ellipse(x, y, 4, 4);
   server.sendScreen();
 }
@@ -62,11 +62,12 @@ void incremental() {
   }
 }
 
-//void mousePressed() {
-
-  //TableRow row = coordonate.getRow(i);
-//incremental();
-//}
+/*
+void mousePressed() {
+ TableRow row = coordonate.getRow(i);
+ incremental();
+ }
+ */
 
 void midiMessage(MidiMessage message, long timestamp, String bus_name) { 
   int note = (int)(message.getMessage()[1] & 0xFF);
@@ -74,5 +75,4 @@ void midiMessage(MidiMessage message, long timestamp, String bus_name) {
   if (vel > 0) {
     incremental();
   }
-
 }

@@ -43,13 +43,13 @@ void draw() {
 
     handX=hand.getPosition().x;
     handY=hand.getPosition().y;
-    handZ=hand.getPosition().z;
+   // handZ=hand.getPosition().z;
   }
 
   background(0);
 
   int num=(int)random(5, 10);
-  int total=constrain(n+num, 0, 500);
+  int total=constrain(n+num, 0, 226);
 
 
 
@@ -75,7 +75,7 @@ class circle {
   float _x=random(-1, 1), _y=random(-1, 1);
   float R=random(2, 6);
   float x=0, y=0;
-  int c=500, _c=10;
+  int c=250, _c=10;
 
 
   void make() {
@@ -92,8 +92,8 @@ class circle {
       return false;
     }
     noStroke();
-    fill(#F2CA00, c);
-    ellipse(x, y, handZ/10, handZ/10);
+    fill(#F2CA00, c-50);
+    ellipse(x, y, 6, 6);
     x+=_x;
     y+=_y;
     c-=_c;
