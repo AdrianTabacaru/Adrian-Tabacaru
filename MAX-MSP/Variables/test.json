@@ -1,0 +1,25 @@
+{
+	"pattrstorage" : 	{
+		"name" : "test",
+		"slots" : 		{
+			"1" : 			{
+				"id" : 1,
+				"data" : 				{
+					"valori" : [ 0.0 ]
+				}
+
+			}
+,
+			"2" : 			{
+				"id" : 2,
+				"data" : 				{
+					"valori" : [ 2 ]
+				}
+
+			}
+
+		}
+
+	}
+
+}
